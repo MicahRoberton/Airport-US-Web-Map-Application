@@ -35,7 +35,7 @@ airports= L.geoJson.ajax("assets/airports.geojson", {
         var id = 0;
 
         if (feature.properties.CNTL_TWR == "Y") {
-            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-building'})});
+            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-building'}); color: });
         } else { // "N"
             return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-plane'})});
         }
