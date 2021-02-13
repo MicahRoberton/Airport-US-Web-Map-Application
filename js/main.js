@@ -27,15 +27,14 @@ airports= L.geoJson.ajax("assets/airports.geojson", {
   // Then each (point) feature will bind a popup window.
   // The content of the popup window is the value of `feature.properties.company`
   onEachFeature: function (feature, layer) {
-      layer.bindPopup(popup(feature));
-      return feature.properties.STATE;
+      layer.bindPopup(feature.properties.NAME);
   },
 
   pointToLayer: function (feature, latlng) {
         var id = 0;
 
         if (feature.properties.CNTL_TWR == "Y") {
-            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-building'}); color: });
+            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-building'})});
         } else { // "N"
             return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-plane'})});
         }
