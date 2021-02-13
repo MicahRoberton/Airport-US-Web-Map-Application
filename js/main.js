@@ -6,6 +6,7 @@ var mymap = L.map('map', {
     minZoom: 3,
     detectRetina: true});
 
+
 // 2. Add a base map.
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png').addTo(mymap);
 
@@ -29,6 +30,7 @@ airports= L.geoJson.ajax("assets/airports.geojson", {
   onEachFeature: function (feature, layer) {
       layer.bindPopup(feature.properties.NAME);
   },
+  
 
   pointToLayer: function (feature, latlng) {
         var id = 0;
